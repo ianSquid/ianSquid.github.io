@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>游宇恩</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: #000 url('https://cdn.jsdelivr.net/gh/JulianLaval/canvas-particle-network/img/demo-bg.jpg') center center fixed;
+      background-size: cover;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, nav a {
+      letter-spacing: 1px;
+    }
+    header {
+      background: rgba(0,0,0,0.8);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img {
+      height: 40px;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.6);
+    }
+    .hero .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 1.5em;
+      margin: 0;
+      color: #ffcc00;
+    }
+    .typing {
+      color: #fff;
+      font-size: 0.9em;
+      margin-top: 20px;
+      white-space: nowrap;
+      border-right: 2px solid #ffcc00;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #ffcc00; }
+    }
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      color: #ffcc00;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      border: 2px solid #fff;
+    }
+    .card p {
+      font-size: 0.8em;
+      color: #ccc;
+    }
+    .characters-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .character {
+      width: 150px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+    }
+    .video-wrapper {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .video-wrapper iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+    }
+    footer {
+      background: rgba(0,0,0,0.9);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Brawl_Stars_Transparent_Background.png" alt="Logo">
+    <nav>
+      <a href="#about">關於我</a>
+      <a href="#brawlers">角色陣容</a>
+      <a href="#projects">專案作品</a>
+      <a href="#contact">聯絡我</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="Brawl_Stars_Transparent_Background.png" alt="Logo" class="logo">
+    <h1>游宇恩</h1>
+    <div class="typing" id="typing"></div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>關於我</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>🎮 玩家精神</h3>
+        <p>從荒野亂鬥中，我學會了策略、合作與創造力。</p>
+      </div>
+      <div class="card">
+        <h3>💡 創意發明</h3>
+        <p>我熱愛發想獨特專案，追求視覺體驗與互動樂趣。</p>
+      </div>
+      <div class="card">
+        <h3>📚 學習不停</h3>
+        <p>程式設計與動畫技術是我不斷精進的目標。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="brawlers">
+    <h2>我的角色陣容</h2>
+    <div class="characters-container">
+      <img src="brawler1.png" alt="角色1" class="character">
+      <img src="brawler2.png" alt="角色2" class="character">
+      <img src="brawler3.png" alt="角色3" class="character">
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>專案作品</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>🌟 網站仿作</h3>
+        <p>以 Brawl Stars 為主題，設計動畫互動網頁。</p>
+      </div>
+      <div class="card">
+        <h3>🎨 動畫人物設計</h3>
+        <p>手繪角色動畫，融合原創風格。</p>
+      </div>
+      <div class="card">
+        <h3>🛠 前端開發練習</h3>
+        <p>React、HTML、CSS 實作視覺有感的網站。</p>
+      </div>
+    </div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/eGSBQACWQ40" title="YouTube video" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>聯絡我</h2>
+    <p style="font-size: 0.9em;">📧 yu.yu.en@example.com ｜ 📱 0912-345-678</p>
+  </section>
+
+  <footer>
+    Made by 游宇恩 ｜ Inspired by Brawl Stars ｜ Powered by HTML & CSS 💥
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+
+    const typingTexts = [
+      "這裡是我的亂鬥基地！",
+      "我熱愛創作與開發互動網站！",
+      "一起來看看我的作品吧！"
+    ];
+    let i = 0;
+    let typingElement = document.getElementById("typing");
+    function typeLoop() {
+      typingElement.style.width = "0";
+      typingElement.innerHTML = "";
+      typingElement.classList.remove("typing");
+      void typingElement.offsetWidth;
+      typingElement.textContent = typingTexts[i];
+      typingElement.classList.add("typing");
+      i = (i + 1) % typingTexts.length;
+    }
+    setInterval(typeLoop, 5000);
+    typeLoop();
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>游宇恩的遊戲世界</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 引用共用 CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Minecraft 互動背景 (僅在首頁與 Minecraft 頁面呈現) -->
+  <div id="mc-bg-wrapper">
+    <canvas id="mc-bg-canvas"></canvas>
+  </div>
+
+  <!-- Header 導覽列 -->
+  <header>
+    <img src="images/Brawl_Stars_Transparent_Background.png" alt="Logo">
+    <nav>
+      <a href="index.html">首頁</a>
+      <a href="about.html">關於我</a>
+      <a href="brawlstars.html">荒野亂鬥</a>
+      <a href="minecraft.html">Minecraft</a>
+      <a href="projects.html">作品集</a>
+      <a href="contact.html">聯絡我</a>
+    </nav>
+  </header>
+
+  <!-- Hero 區域 -->
+  <section class="hero">
+    <img src="images/Brawl_Stars_Transparent_Background.png" alt="Logo" class="logo">
+    <h1>游宇恩</h1>
+    <div class="typing" id="typing"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Made by 游宇恩 ｜ Powered by HTML + CSS + Minecraft 互動特效
+  </footer>
+
+  <!-- 打字動畫 JavaScript -->
+  <script>
+    const typingTexts = [
+      "這裡是我的遊戲世界！",
+      "荒野亂鬥＋Minecraft = 我的最愛！",
+      "點擊背景就像在玩麥塊一樣喔！"
+    ];
+    let i = 0;
+    const typingElement = document.getElementById("typing");
+    function typeLoop() {
+      typingElement.style.width = "0";
+      typingElement.innerHTML = "";
+      typingElement.classList.remove("typing");
+      void typingElement.offsetWidth;
+      typingElement.textContent = typingTexts[i];
+      typingElement.classList.add("typing");
+      i = (i + 1) % typingTexts.length;
+    }
+    setInterval(typeLoop, 5000);
+    typeLoop();
+  </script>
+
+  <!-- 引用 Minecraft 互動背景功能 -->
+  <script src="js/mc_destroy.js"></script>
+</body>
+</html>
